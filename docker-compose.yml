@@ -13,3 +13,16 @@ services:
             dockerfile: PHP.Dockerfile
         volumes:
             - ./app:/app
+    mysql:
+        image: mysql:latest
+        environment:
+            MYSQL_ROOT_PASSWORD: 'root@123'
+            MYSQL_USER: 'kwta_user'
+            MYSQL_PASSWORD: 'kwta@123'
+            MYSQL_DATABASE: 'kwta'
+        volumes:
+            - ./mysqldata:/var/lib/mysql
+        ports:
+            - 33060:3306
+volumes:
+    mysqldata: {}

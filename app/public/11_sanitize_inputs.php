@@ -7,14 +7,14 @@
 // echo '<br/>' . $_GET['name'];
 // echo '<br/>' . $_GET['age'];
 if(isset($_POST['submit'])) {
-  echo '<br/>' . $_POST['name'];
-  echo '<br/>' . $_POST['age'];
+//   $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_SPECIAL_CHARS);
+//   $age = htmlspecialchars('<br/>' . $_POST['age']);
+    $name = filter_var($_POST['name'], FILTER_SANITIZE_SPECIAL_CHARS);
+    echo $name;
 }
 ?>
 
-<a href="<?php echo $_SERVER['PHP_SELF']; ?>?name=Hillary&age=29">Click</a>
-
-<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
   <div>
     <label for="name">Name: </label>
     <input type="text" name="name" />

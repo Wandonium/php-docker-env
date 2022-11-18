@@ -1,8 +1,11 @@
-<?php
-$pdo = new PDO('mysql:dbname=kwta;host=mysql', 'kwta_user', 'kwta@123', [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
+<?php 
+// $pdo = new PDO('mysql:dbname=kwta;host=mysql', 'kwta_user', 'kwta@123', [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
 
-$query = $pdo->query('SHOW VARIABLES like "version"');
+// $query = $pdo->query('SHOW VARIABLES like "version"');
 
-$row = $query->fetch();
+// $row = $query->fetch();
 
-echo 'MySQL version:' . $row['Value'];
+// echo 'MySQL version:' . $row['Value'];
+
+echo 'Hello Universe1!';
+?>
